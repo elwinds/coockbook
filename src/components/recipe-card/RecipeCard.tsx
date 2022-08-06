@@ -11,7 +11,7 @@ type Props = {
 
 console.log(classes);
 
-// const ingridientsValueToShow = 5;
+const ingridientsValueToShow = 5;
 
 export const RecipeCard: React.FC<Props> = (props) => {
   const { recipe } = props;
@@ -23,7 +23,8 @@ export const RecipeCard: React.FC<Props> = (props) => {
         // @ts-ignore
         return recipe[recipeKeyValue];
       })
-      .filter((ingridient) => !!ingridient);
+      .filter((ingridient) => !!ingridient)
+      .slice(0, ingridientsValueToShow);
   }, [recipe]);
 
   return (
