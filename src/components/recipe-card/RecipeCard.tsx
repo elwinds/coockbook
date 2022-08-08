@@ -4,14 +4,13 @@ import RecipeCardHeader from "./RecipeCardHeader";
 import RecipeCardImage from "./RecipeCardImage";
 import RecipeCardIngridients from "./RecipeCardIngridients";
 import classes from "./RecipeCard.module.css";
+import RecipeCardFooter from "./RecipeCardFooter";
 
 type Props = {
   recipe: Recipe;
 };
 
-console.log(classes);
-
-// const ingridientsValueToShow = 5;
+const ingridientsValueToShow = 5;
 
 export const RecipeCard: React.FC<Props> = (props) => {
   const { recipe } = props;
@@ -23,11 +22,12 @@ export const RecipeCard: React.FC<Props> = (props) => {
         // @ts-ignore
         return recipe[recipeKeyValue];
       })
-      .filter((ingridient) => !!ingridient);
+      .filter((ingridient) => !!ingridient)
+      .slice(0, ingridientsValueToShow);
   }, [recipe]);
 
   return (
-    <div>
+    <div className={classes.recipeCard}>
       <RecipeCardHeader
         recipeName={recipe.strMeal}
         recipeCategory={recipe.strCategory}
@@ -36,7 +36,19 @@ export const RecipeCard: React.FC<Props> = (props) => {
         recipeImage={recipe.strMealThumb}
         recipeName={recipe.strMeal}
       />
-      <RecipeCardIngridients ingridients={recipeIng} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          justifyContent: "space-between",
+          height: "100%",
+          padding: "10px 0",
+        }}
+      >
+        <RecipeCardIngridients ingridients={recipeIng} />
+        <RecipeCardFooter />
+      </div>
     </div>
   );
 };
