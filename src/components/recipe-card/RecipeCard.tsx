@@ -47,7 +47,7 @@ export const RecipeCard: React.FC<Props> = (props) => {
         }}
       >
         <RecipeCardIngridients ingridients={recipeIng} />
-        <RecipeCardFooter />
+        <RecipeCardFooter recipeId={recipe.idMeal}/>
       </div>
     </div>
   );
