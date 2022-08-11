@@ -10,7 +10,20 @@ export const fetchRecipes = () => {
             dispatch({type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data.meals});
         } 
         catch(error) {
-            dispatch({type: RecipeActionTypes.FETCH_RECIPES, payload: 'Ошибка при загрузке рецептов'});
+            dispatch({type: RecipeActionTypes.FETCH_RECIPES_ERROR, payload: 'Ошибка при загрузке рецептов'});
         }
     }
 };
+
+export const fetchOneRecipe = (id: string) => {
+    return async (dispatch: Dispatch<RecipeAction>) => {
+        try {
+            dispatch({type: RecipeActionTypes.FETCH_RECIPES});
+            const response = await RecipesApi.fetchOneRecipeById(id);
+            dispatch({type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data.meals});
+        }
+        catch(error) {
+            dispatch({type: RecipeActionTypes.FETCH_RECIPES_ERROR, payload: 'Ошибка при загрузке рецепта'})
+        }
+    }
+}

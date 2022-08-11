@@ -1,0 +1,7 @@
+@import url("./fonts/Gilroy/stylesheet.css");
+
+body {
+    font-family: 'Gilroy';
+    font-size: '15px';
+    background: linear-gradient(360deg, #211F20 0%, #746e6c 100%);
+}

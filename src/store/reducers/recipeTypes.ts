@@ -3,6 +3,7 @@
     strMeal: string,
     strCategory: string,
     strMealThumb: string,
+    strInstructions: string,
 }
 
 export interface RecipeState {

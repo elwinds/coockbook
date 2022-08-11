@@ -1,7 +1,8 @@
 ﻿import axios from "axios";
 
 const endpoints = {
-    urlAllRecipes: 'https://www.themealdb.com/api/json/v1/1/search.php?s=',
+  urlAllRecipes: "https://www.themealdb.com/api/json/v1/1/search.php?s=",
+  urlOneRecipeById: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=",
 };
 
 class RecipesApi {
@@ -10,6 +11,12 @@ class RecipesApi {
 
        return response;
     };
+
+    static async fetchOneRecipeById(id: string) {
+        const response = await axios.get(endpoints.urlOneRecipeById + id);
+
+        return response;
+    }
 };
 
 export {RecipesApi};

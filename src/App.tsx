@@ -1,12 +1,18 @@
-import React from 'react';
-import './App.css';
-import RecipeList from './components/RecipeList';
+import React from "react";
+import "./App.css";
+import RecipeList from "./components/RecipeList";
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import RecipePage from "./pages/RecipePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
-    <div>
-      <RecipeList/>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/recipe/:recipeId" element={<RecipePage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }
 

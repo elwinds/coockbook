@@ -1,0 +1,13 @@
+﻿.button {
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 17px;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}

@@ -1,3 +1,78 @@
-﻿.recipeCard {
+﻿.recipeCardContainer {
+    width: 80%;
     display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.recipeCard {
+    display: flex;
+    width: 46%;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 20px 2%;
+    align-items: center;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+}
+
+.recipeCardHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items:flex-end;
+    padding: 15px 0;
+}
+
+
+.recipeCardHeaderName {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.recipeCardHeaderCategory {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.recipeCardImage {
+    width: 100%;
+}
+
+.recipeCardIngridients {
+    display: flex;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #CFCFCF;
+    padding: 15px 0px;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    align-items:baseline;
+    margin: 0 auto;
+}
+
+.recipeCardOneIngridient {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.recipeCardFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+    padding: 15px 0;
+    width: 80%;
+    margin: 0 auto;
 }
