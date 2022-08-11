@@ -4,11 +4,17 @@ import { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import RecipeCard from './recipe-card/RecipeCard';
 import classes from './recipe-card/RecipeCard.module.css'
+import CategoriesList from './categories-list/CategoriesList';
 
 const RecipeList: React.FC = () => {
     const {recipes, loading, error} = useTypedSelector(state => state.recipe);
-    const {fetchRecipes} = useActions();
+    const {fetchRecipes, fetchCategories} = useActions();
 
+    
+
+    useEffect(() => {
+      fetchCategories()
+    }, [])
 
     //первый рендер компоненты
     useEffect(() => {
@@ -23,11 +29,14 @@ const RecipeList: React.FC = () => {
     }
 
     return (
-      <div className={classes.recipeCardContainer}>
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.idMeal} recipe={recipe} />
-        ))}
-      </div>
+      <>
+        <CategoriesList/>
+        <div className={classes.recipeCardContainer}>
+          {recipes.map((recipe) => (
+            <RecipeCard key={recipe.idMeal} recipe={recipe} />
+          ))}
+        </div>
+      </>
     );
 };
 

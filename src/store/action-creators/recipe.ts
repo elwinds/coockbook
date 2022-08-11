@@ -1,5 +1,5 @@
 ﻿import { Dispatch } from 'redux';
-import { RecipeAction, RecipeActionTypes } from '../reducers/recipeTypes';
+import { RecipeAction, RecipeActionTypes } from '../reducers/recipeReducer/recipeTypes';
 import { RecipesApi } from '../../API/API';
 
 export const fetchRecipes = () => {

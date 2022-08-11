@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import { Recipe } from '../../store/reducers/recipeTypes';
+import { Recipe } from '../../store/reducers/recipeReducer/recipeTypes';
 import classes from './OneRecipe.module.css'
 
 type Props = {
