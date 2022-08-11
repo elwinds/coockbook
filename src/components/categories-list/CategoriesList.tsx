@@ -1,4 +1,5 @@
 ﻿import * as React from "react";
+import { Link } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import classes from "./CategoriesList.module.css";
@@ -24,7 +25,11 @@ const CategoriesList = () => {
   return (
     <div className={classes.categoriesList}>
       {categories.map((item) => {
-        return <div key={item.idCategory} className={classes.oneCategoryItem}>{item.strCategory}</div>;
+        return (
+          <div key={item.idCategory} className={classes.oneCategoryItem}>
+            <Link to={"/category/" + item.strCategory}>{item.strCategory}</Link>
+          </div>
+        );
       })}
     </div>
   );

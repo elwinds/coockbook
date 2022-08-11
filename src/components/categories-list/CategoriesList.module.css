@@ -17,3 +17,8 @@
 .oneCategoryItem {
     padding: 5px 45px;
 }
+
+.oneCategoryItem a {
+    color: #CFCFCF;
+    text-decoration: none;
+}

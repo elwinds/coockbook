@@ -25,9 +25,7 @@ const RecipePage = () => {
   }
 
   return (
-    <div>
       <OneRecipeContainer recipe={recipe} />
-    </div>
   );
 };
 
