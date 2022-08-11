@@ -5,6 +5,7 @@ import RecipeCardImage from "./RecipeCardImage";
 import RecipeCardIngridients from "./RecipeCardIngridients";
 import classes from "./RecipeCard.module.css";
 import RecipeCardFooter from "./RecipeCardFooter";
+import { useIngridients } from "../../hooks/useIngridients";
 
 type Props = {
   recipe: Recipe;
@@ -15,16 +16,12 @@ const ingridientsValueToShow = 5;
 export const RecipeCard: React.FC<Props> = (props) => {
   const { recipe } = props;
 
-  const recipeIng = React.useMemo(() => {
-    return Object.keys(recipe)
-      .filter((item) => item.match("strIngredient"))
-      .map((recipeKeyValue) => {
-        // @ts-ignore
-        return recipe[recipeKeyValue];
-      })
-      .filter((ingridient) => !!ingridient)
-      .slice(0, ingridientsValueToShow);
-  }, [recipe]);
+  const recipeIng = useIngridients(recipe, "strIngredient").slice(
+    0,
+    ingridientsValueToShow
+  );
+ 
+  
 
   return (
     <div className={classes.recipeCard}>

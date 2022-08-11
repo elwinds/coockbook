@@ -20,11 +20,15 @@ const RecipePage = () => {
     }
   }, []);
 
+  if (!recipe) {
+    return null;
+  }
+
   return (
     <div>
-        <OneRecipeContainer/>
+      <OneRecipeContainer recipe={recipe} />
     </div>
-  )
+  );
 };
 
 export default RecipePage;
