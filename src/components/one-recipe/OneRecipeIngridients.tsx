@@ -9,7 +9,7 @@ type Props = {
 
 const OneRecipeIngridients: React.FC<Props> = (props) => {
     const {ingridients} = props;
-    console.log(ingridients)
+    
     return (
         <div className={classes.oneRecipeIngridients}>
             {ingridients.map((oneIng) => {

@@ -1,0 +1,24 @@
+﻿.categoriesList {
+    display: flex;
+    /* width: 100%; */
+    background: #504B4A;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    color: #CFCFCF;
+    padding: 20px 10px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.oneCategoryItem {
+    padding: 5px 45px;
+}
+
+.oneCategoryItem a {
+    color: #CFCFCF;
+    text-decoration: none;
+}

@@ -1,4 +1,4 @@
-﻿import type { Recipe } from './../store/reducers/recipeTypes';
+﻿import type { Recipe } from '../store/reducers/recipeReducer/recipeTypes';
 import * as React from 'react';
 
 

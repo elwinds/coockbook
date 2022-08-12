@@ -4,4 +4,5 @@ body {
     font-family: 'Gilroy';
     font-size: '15px';
     background: linear-gradient(360deg, #211F20 0%, #746e6c 100%);
+    margin: 0;
 }

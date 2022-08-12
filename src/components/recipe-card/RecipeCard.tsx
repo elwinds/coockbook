@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import { Recipe } from "../../store/reducers/recipeTypes";
+import { Recipe } from "../../store/reducers/recipeReducer/recipeTypes";
 import RecipeCardHeader from "./RecipeCardHeader";
 import RecipeCardImage from "./RecipeCardImage";
 import RecipeCardIngridients from "./RecipeCardIngridients";
