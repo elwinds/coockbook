@@ -42,6 +42,11 @@
     color: #FFFFFF;
 }
 
+.recipeCardHeaderCategory a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 .recipeCardImage {
     width: 100%;
 }
@@ -75,4 +80,18 @@
     padding: 15px 0;
     width: 80%;
     margin: 0 auto;
+}
+
+.recipesNotFound {
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    height: 100vh;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
 }
