@@ -1,5 +1,7 @@
 ﻿import * as React from 'react';
 import classes from './RecipeCard.module.css';
+import { Link } from "react-router-dom";
+
 
 type Props = {
     recipeName: string,
@@ -9,11 +11,11 @@ type Props = {
 const RecipeCardHeader: React.FC<Props> = (props) => {
     return (
       <div className={classes.recipeCardHeader}>
-        <div className={classes.recipeCardHeaderName}>
-            {props.recipeName}
-        </div>
+        <div className={classes.recipeCardHeaderName}>{props.recipeName}</div>
         <div className={classes.recipeCardHeaderCategory}>
-          {props.recipeCategory}
+          <Link to={"/category/" + props.recipeCategory}>
+            {props.recipeCategory}
+          </Link>
         </div>
       </div>
     );

@@ -21,6 +21,9 @@ const CategoryPage = () => {
     }
   }, []);
 
+  if (!recipes.length)
+    return <div className={classes.recipesNotFound}>Рецепты не найдены</div>;
+
   return (
     <div>
       <div className={classes.recipeCardContainer}>

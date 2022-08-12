@@ -1,16 +1,17 @@
 import React from "react";
 import "./App.css";
-import RecipeList from "./components/RecipeList";
 import { Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import RecipePage from "./pages/RecipePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import CategoryPage from "./pages/CategoryPage";
 import CategoriesList from "./components/categories-list/CategoriesList";
+import Banner from "./components/banner/Banner";
 
 function App() {
   return (
     <>
+      <Banner />
       <CategoriesList />
       <Routes>
         <Route path="/" element={<MainPage />} />

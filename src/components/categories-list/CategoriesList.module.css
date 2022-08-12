@@ -1,6 +1,5 @@
 ﻿.categoriesList {
     display: flex;
-    /* width: 100%; */
     background: #504B4A;
     font-family: 'Gilroy';
     font-style: normal;
@@ -18,7 +17,9 @@
     padding: 5px 45px;
 }
 
-.oneCategoryItem a {
+
+.categoriesList a {
     color: #CFCFCF;
     text-decoration: none;
 }
+
