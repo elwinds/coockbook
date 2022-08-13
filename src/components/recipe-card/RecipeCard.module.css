@@ -47,6 +47,10 @@
     color: #FFFFFF;
 }
 
+.recipeCardHeaderCategory a:hover {
+    text-decoration: underline;
+}
+
 .recipeCardImage {
     width: 100%;
 }
