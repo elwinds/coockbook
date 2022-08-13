@@ -7,10 +7,12 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CategoryPage from "./pages/CategoryPage";
 import CategoriesList from "./components/categories-list/CategoriesList";
 import Banner from "./components/banner/Banner";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   return (
     <>
+      <Navbar/>
       <Banner />
       <CategoriesList />
       <Routes>
