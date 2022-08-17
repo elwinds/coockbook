@@ -1,0 +1,109 @@
+﻿.form_container {
+    /* width: 70%; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #CFCFCF;
+    font-family: 'Gilroy';
+    font-size: 15px;
+}
+
+.form {
+    padding: 0px 20px;
+    width: 30%;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #CFCFCF;
+}
+
+.tabs {
+    display: flex;
+    width: 30%;
+    margin-top: 40px;    
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px 10px 0 0;
+}
+
+.tabs button {
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    width: 50%;
+    padding: 20px 0;
+    cursor: pointer;
+    border-radius: 0 10px 0 0;
+}
+
+.btnActive {
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%) !important;
+}
+
+.tabs button:first-child {
+    border-right: 1px solid #CFCFCF;
+    border-radius: 10px 0 0 0;
+}
+
+.form_inputs {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 30px 0;
+}
+
+.form_inputs input {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: none;
+    margin: 10px 0 0px 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    outline: none;
+}
+
+ .form_inputs label {
+    margin-top: 15px;
+} 
+
+.form_inputs input:focus {
+    outline: 2px solid #9b9694;
+}
+
+.form_inputs button {
+    width: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.form_inputs button:disabled {
+    background: rgba(255, 255, 255, 0.1)
+}
+
+.invalidInput {
+    font-size: 16px;
+    font-weight: 300;
+    color: #ca4f4f;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
