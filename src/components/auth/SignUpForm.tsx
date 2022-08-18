@@ -5,8 +5,12 @@ import { regExpEmail } from "./regExpEmail";
 import { PropsAuth } from "../../API/AuthAPI";
 import { AppContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { UserActionTypes } from "../../store/reducers/userReducer/userTypes";
+
 
 const SignUpForm = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {setIsAuth} = React.useContext(AppContext);
@@ -39,6 +43,11 @@ const SignUpForm = () => {
 
     if(response){
     localStorage.setItem("idToken", response.data.idToken);
+      dispatch({
+        type: UserActionTypes.SET_USER_EMAIL,
+        payload: response.data.email,
+      });
+
       if(setIsAuth){
         setIsAuth(true);
       }

@@ -5,6 +5,8 @@ import { regExpEmail } from "./regExpEmail";
 import { PropsAuth } from "../../API/AuthAPI";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../App";
+import { useDispatch } from "react-redux";
+import {UserActionTypes} from '../../store/reducers/userReducer/userTypes'
 
 const LoginForm = () => {
   const { setIsAuth } = React.useContext(AppContext);
@@ -22,6 +24,7 @@ const LoginForm = () => {
     returnSecureToken: true,
   };
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const buttonClickHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,11 +35,14 @@ const LoginForm = () => {
 
     if (response) {
       localStorage.setItem("idToken", response.data.idToken);
+      dispatch({ type: UserActionTypes.SET_USER_EMAIL, payload: response.data.email });
+
 
       if (setIsAuth) {
         setIsAuth(true);
       }
     }
+    
 
     navigate("../profile", { replace: true });
   };
