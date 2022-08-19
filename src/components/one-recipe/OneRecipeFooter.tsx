@@ -20,7 +20,7 @@ const OneRecipeFooter: React.FC = () => {
             openAllRecipesPage();
           }}
         />
-        <Favorite />
+        {/* <Favorite /> */}
       </div>
     );
 };

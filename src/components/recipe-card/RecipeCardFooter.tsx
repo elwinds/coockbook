@@ -1,29 +1,31 @@
-﻿import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Button from '../UI/Button/Button';
-import Favorite from '../UI/Favorite/Favorite';
+﻿import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../UI/Button/Button";
+import Favorite from "../UI/Favorite/Favorite";
 import classes from "./RecipeCard.module.css";
 
 type Props = {
-    recipeId: string,
+  recipeId: string;
 };
 
 const RecipeCardFooter: React.FC<Props> = (props) => {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
-    const openRecipePage = () => {
-        navigate(`/recipe/${props.recipeId}`)
-    }
+  const openRecipePage = () => {
+    navigate(`/recipe/${props.recipeId}`);
+  };
 
-    return (
-        <div className={classes.recipeCardFooter}>
-            <Button
-                buttonText='View full recipe'
-                onClickHandler={() => {openRecipePage()}}    
-            />
-            <Favorite/>
-        </div>
-    )
+  return (
+    <div className={classes.recipeCardFooter}>
+      <Button
+        buttonText="View full recipe"
+        onClickHandler={() => {
+          openRecipePage();
+        }}
+      />
+      <Favorite idMeal={props.recipeId} />
+    </div>
+  );
 };
 
 export default RecipeCardFooter;

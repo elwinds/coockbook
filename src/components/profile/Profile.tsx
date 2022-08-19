@@ -1,21 +1,25 @@
 ﻿import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { UserActionTypes } from '../../store/reducers/userReducer/userTypes';
 import Favorites from '../favorites/Favorites';
 import Button from '../UI/Button/Button';
 import classes from "./Profile.module.css";
 
 
 const Profile = () => {
-    const {email} = useTypedSelector((state) => state.userEmail)
+    const {email} = useTypedSelector((state) => state.userInfo)
     const { setIsAuth } = React.useContext(AppContext);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const onClickLogoutButton = () => {
         if(setIsAuth){
             setIsAuth(false)
         };
+        dispatch({type: UserActionTypes.CLEAR_USER_EMAIL})
         localStorage.removeItem('idToken');
         navigate("../", { replace: true });
     }

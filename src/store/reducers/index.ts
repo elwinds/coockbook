@@ -7,7 +7,7 @@ import { userReducer } from './userReducer/userReducer';
 export const rootReducer = combineReducers({
     recipe: recipeReducer,
     categories: categoriesReducer,
-    userEmail: userReducer,
+    userInfo: userReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>

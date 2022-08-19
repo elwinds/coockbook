@@ -44,7 +44,7 @@ const LoginForm = () => {
     }
     
 
-    navigate("../profile", { replace: true });
+    navigate("/profile", { replace: true });
   };
 
   return (
