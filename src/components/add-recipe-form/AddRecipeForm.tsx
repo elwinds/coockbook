@@ -13,7 +13,9 @@ const AddRecipeForm: React.FC<Props> = (props) => {
   const { categories } = useTypedSelector((state) => state.categories);
   const { setVisible } = props;
   const [dishTitleValue, setDishTitleValue] = React.useState<string>("");
-  const [categoryValue, setCategoryValue] = React.useState<string>(categories[0].strCategory);
+  const [categoryValue, setCategoryValue] = React.useState<string>(
+    categories?.[0]?.strCategory || ""
+  );
   const [instructionsValue, setInstructionsValue] = React.useState<string>("");
   const [linkImageValue, setLinkImageValue] = React.useState<string>("");
   const [ingrAndMeasureValue, setIngrAndMeasureValue] =
@@ -33,10 +35,10 @@ const AddRecipeForm: React.FC<Props> = (props) => {
     setVisible(false);
 
     const newRecipeData = {
-      idMeal: Date.now(),
+      idMeal: String(Date.now()),
       strMeal: dishTitleValue,
       strCategory: categoryValue,
-      strSource: linkImageValue,
+      strMealThumb: linkImageValue,
       strInstructions: instructionsValue,
     };
 
@@ -46,9 +48,9 @@ const AddRecipeForm: React.FC<Props> = (props) => {
       .split(", ")
       .map((item, index) => {
         //@ts-ignore
-        newRecipeData[`Ingredient${index + 1}`] = item.split(": ")[0];
+        newRecipeData[`strIngredient${index + 1}`] = item.split(": ")[0];
         //@ts-ignore
-        newRecipeData[`Measure${index + 1}`] = item.split(": ")[1];
+        newRecipeData[`strMeasure${index + 1}`] = item.split(": ")[1];
         return 0;
       });
     //console.log(createIngAndRecipeValues)
@@ -97,7 +99,7 @@ const AddRecipeForm: React.FC<Props> = (props) => {
             <input
               value={linkImageValue}
               id="image"
-              type="link"
+              type="text"
               placeholder="Enter image link"
               onChange={(e) => setLinkImageValue(e.target.value)}
             ></input>

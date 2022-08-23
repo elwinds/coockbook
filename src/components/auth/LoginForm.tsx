@@ -35,6 +35,7 @@ const LoginForm = () => {
 
     if (response) {
       localStorage.setItem("idToken", response.data.idToken);
+      localStorage.setItem("userEmail", response.data.email);
       dispatch({ type: UserActionTypes.SET_USER_EMAIL, payload: response.data.email });
 
 

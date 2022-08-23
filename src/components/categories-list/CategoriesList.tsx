@@ -1,19 +1,12 @@
 ﻿import * as React from "react";
 import { Link } from "react-router-dom";
-import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import classes from "./CategoriesList.module.css";
 
 const CategoriesList = () => {
-  const { fetchCategories } = useActions();
-
   const { categories, loading, error } = useTypedSelector(
     (state) => state.categories
   );
-
-  React.useEffect(() => {
-    fetchCategories();
-  }, []);
 
   if (loading) {
     return <h1>Идет загрузка...</h1>;
