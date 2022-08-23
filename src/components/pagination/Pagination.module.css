@@ -1,0 +1,27 @@
+﻿.pagination_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.pagination_container button {
+    cursor: pointer;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    background-color: #504B4A;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    /* padding: 10px; */
+    width: 40px;
+    height: 40px;
+}
+
+.pagination_container button.activeButton {
+    background-color: #618967;
+}
