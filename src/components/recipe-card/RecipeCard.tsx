@@ -15,13 +15,10 @@ const ingridientsValueToShow = 5;
 
 export const RecipeCard: React.FC<Props> = (props) => {
   const { recipe } = props;
-
   const recipeIng = useIngridients(recipe, "strIngredient").slice(
     0,
     ingridientsValueToShow
   );
- 
-  
 
   return (
     <div className={classes.recipeCard}>
@@ -44,7 +41,7 @@ export const RecipeCard: React.FC<Props> = (props) => {
         }}
       >
         <RecipeCardIngridients ingridients={recipeIng} />
-        <RecipeCardFooter recipeId={recipe.idMeal}/>
+        <RecipeCardFooter recipeId={recipe.idMeal} />
       </div>
     </div>
   );

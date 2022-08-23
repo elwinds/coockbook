@@ -11,7 +11,6 @@ const CategoriesList = () => {
     (state) => state.categories
   );
 
-
   React.useEffect(() => {
     fetchCategories();
   }, []);
@@ -23,7 +22,6 @@ const CategoriesList = () => {
     return <h1>Произошла ошибка {error}</h1>;
   }
 
-  //добавить all, сделать линк на главную страницу
   return (
     <div className={classes.categoriesList}>
       <Link to={"/"}>

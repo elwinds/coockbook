@@ -1,0 +1,109 @@
+﻿.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #CFCFCF;
+    font-family: 'Gilroy';
+    position: relative;
+}
+
+.form input {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #504B4A;
+    margin: 10px 0 0px 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CFCFCF;;
+    padding: 10px 15px;
+    outline: none;
+}
+
+.form input:focus {
+    outline: 2px solid #9b9694;
+}
+
+.form label {
+    margin-top: 15px;
+}
+
+.form select option {
+    background: #504B4A;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CFCFCF;
+}
+
+.form select {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #504B4A;
+    margin: 10px 0 0px 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CFCFCF;
+    padding: 10px 15px;
+    outline: none;
+}
+
+.form select:focus {
+    outline: 2px solid #9b9694;
+}
+
+.form textarea {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #504B4A;
+    margin: 10px 0 0px 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #CFCFCF;
+    padding: 10px 15px;
+    outline: none;
+    height: 65px;
+}
+
+.form textarea:focus {
+    outline: 2px solid #9b9694;
+}
+
+.form_column {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.column_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.form h3 {
+    color: #699a71;
+    font-weight: 500;
+}
+
+.form button {
+    margin-top: 40px;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 17px;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.form button:disabled {
+    background: rgba(255, 255, 255, 0.1)
+}
+
+.cross {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}

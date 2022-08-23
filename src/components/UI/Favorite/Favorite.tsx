@@ -23,29 +23,29 @@ const Favorite: React.FC<Props> = (props) => {
   );
   const isRecipeAdded = addedFavoriteRecipes.includes(props.idMeal);
 
+  const handleFavoriteClick = () => {
+    if (isAuth) {
+      if (!isRecipeAdded) {
+        dispatch({
+          type: UserActionTypes.SET_FAVORITE_ID,
+          payload: props.idMeal,
+        });
+      } else {
+        dispatch({
+          type: UserActionTypes.DELETE_FAVORITE_ID,
+          payload: props.idMeal,
+        });
+      }
+    } else navigate("/auth", { replace: true });
+  };
+
   return (
-    <>
-      <img
-        className={classes.addFavoriteIcon}
-        onClick={() => {
-          if (isAuth) {
-            if (!isRecipeAdded) {
-              dispatch({
-                type: UserActionTypes.SET_FAVORITE_ID,
-                payload: props.idMeal,
-              });
-            } else {
-              dispatch({
-                type: UserActionTypes.DELETE_FAVORITE_ID,
-                payload: props.idMeal,
-              });
-            }
-          } else navigate("/auth", { replace: true });
-        }}
-        src={isRecipeAdded ? favIconClicked : favIcon}
-        alt="add to favorite"
-      ></img>
-    </>
+    <img
+      className={classes.addFavoriteIcon}
+      onClick={handleFavoriteClick}
+      src={isRecipeAdded ? favIconClicked : favIcon}
+      alt="add to favorite"
+    />
   );
 };
 
