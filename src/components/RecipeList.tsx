@@ -6,15 +6,8 @@ import Pagination from "./pagination/Pagination";
 
 const RecipeList: React.FC = () => {
   const [activePage, setActivePage] = React.useState(1);
-  const { recipes, loading, error } = useTypedSelector((state) => state.recipe);
+  const { recipes } = useTypedSelector((state) => state.recipe);
   const countPages = Math.ceil(recipes.length / 4);
-
-  if (loading) {
-    return <h1>Идет загрузка</h1>;
-  }
-  if (error) {
-    return <h1>Произошла ошибка {error}</h1>;
-  }
 
   return (
     <div className={classes.recipeListContainer}>

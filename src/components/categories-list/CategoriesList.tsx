@@ -1,9 +1,12 @@
 ﻿import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import classes from "./CategoriesList.module.css";
 
 const CategoriesList = () => {
+  const location = useLocation();
+  const locationPath = location.pathname.split("/");
+
   const { categories, loading, error } = useTypedSelector(
     (state) => state.categories
   );
@@ -23,7 +26,17 @@ const CategoriesList = () => {
       {categories.map((item) => {
         return (
           <div key={item.idCategory} className={classes.oneCategoryItem}>
-            <Link to={"/category/" + item.strCategory}>{item.strCategory}</Link>
+            <Link
+              to={"/category/" + item.strCategory}
+              className={
+                locationPath[1] === "category" &&
+                locationPath[2] === item.strCategory
+                  ? classes.activeCategory
+                  : ""
+              }
+            >
+              {item.strCategory}
+            </Link>
           </div>
         );
       })}

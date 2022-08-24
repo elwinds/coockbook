@@ -2,7 +2,6 @@
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { RecipeActionTypes } from "../../store/reducers/recipeReducer/recipeTypes";
-import { UserActionTypes } from "../../store/reducers/userReducer/userTypes";
 import classes from "./AddRecipeForm.module.css";
 
 type Props = {
@@ -20,8 +19,6 @@ const AddRecipeForm: React.FC<Props> = (props) => {
   const [linkImageValue, setLinkImageValue] = React.useState<string>("");
   const [ingrAndMeasureValue, setIngrAndMeasureValue] =
     React.useState<string>("");
-
-  //console.log(categories);
 
   const dispatch = useDispatch();
 
@@ -42,8 +39,6 @@ const AddRecipeForm: React.FC<Props> = (props) => {
       strInstructions: instructionsValue,
     };
 
-    console.log(newRecipeData);
-
     const createIngAndRecipeValues = ingrAndMeasureValue
       .split(", ")
       .map((item, index) => {
@@ -53,7 +48,6 @@ const AddRecipeForm: React.FC<Props> = (props) => {
         newRecipeData[`strMeasure${index + 1}`] = item.split(": ")[1];
         return 0;
       });
-    //console.log(createIngAndRecipeValues)
 
     dispatch({
       type: RecipeActionTypes.ADD_USER_RECIPE,

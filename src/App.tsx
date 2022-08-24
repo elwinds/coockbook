@@ -19,6 +19,8 @@ import Profile from "./components/profile/Profile";
 import Auth from "./components/auth/Auth";
 import { useActions } from "./hooks/useActions";
 import { UserActionTypes } from "./store/reducers/userReducer/userTypes";
+import { useTypedSelector } from "./hooks/useTypedSelector";
+import { Loader } from "./components/UI/Loader/Loader";
 interface AppContext {
   isAuth: boolean;
   setIsAuth?: Dispatch<SetStateAction<boolean>>;
@@ -33,6 +35,9 @@ export const AppContext = createContext<AppContext>(defaultValue);
 function App() {
   const dispatch = useDispatch();
   const [isAuth, setIsAuth] = useState<boolean>(false);
+  const { loading, error } = useTypedSelector((state) => state.recipe);
+  const { loading: loadingCategories, error: errorCategories } =
+    useTypedSelector((state) => state.categories);
 
   const { fetchRecipes, fetchCategories } = useActions();
 
@@ -47,16 +52,17 @@ function App() {
         payload: localStorage.getItem("userEmail"),
       });
     }
-  }, []);
-
-  useEffect(() => {
     fetchCategories();
-  }, []);
-
-  useEffect(() => {
     fetchRecipes();
   }, []);
 
+  if (loading || loadingCategories) {
+    return <Loader />;
+  }
+
+  if (error || errorCategories) {
+    return <h1>Произошла ошибка {error || errorCategories}</h1>;
+  }
   return (
     <AppContext.Provider
       value={{

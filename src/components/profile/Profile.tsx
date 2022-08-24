@@ -24,6 +24,7 @@ const Profile = () => {
     }
     dispatch({ type: UserActionTypes.CLEAR_USER_EMAIL });
     localStorage.removeItem("idToken");
+    localStorage.removeItem("userEmail");
     navigate("../", { replace: true });
   };
 

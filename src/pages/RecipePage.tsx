@@ -8,8 +8,6 @@ const RecipePage = () => {
   const params = useParams();
   const { fetchOneRecipe } = useActions();
 
-  console.log(useTypedSelector((state) => state.recipe.recipes));
-
   const recipe = useTypedSelector((state) => {
     if (!state.recipe.recipes) {
       return null;
@@ -18,8 +16,6 @@ const RecipePage = () => {
       (recipe) => recipe.idMeal === params.recipeId
     )[0];
   });
-
-  console.log("find recipe", recipe, params.recipeId);
 
   React.useEffect(() => {
     if (!recipe && params.recipeId) {
