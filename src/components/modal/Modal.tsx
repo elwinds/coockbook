@@ -1,6 +1,8 @@
 ﻿import * as React from "react";
 import classes from "./Modal.module.css";
+import "./animation.css";
 import { Dispatch, SetStateAction } from "react";
+import { CSSTransition } from "react-transition-group";
 
 type Props = {
   children: JSX.Element;
@@ -15,14 +17,21 @@ const Modal: React.FC<Props> = ({ children, visible, setVisible }) => {
   }
 
   return (
-    <div className={rootClasses.join(" ")} onClick={() => setVisible(false)}>
-      <div
-        className={classes.modalContent}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {children}
+    <CSSTransition
+      timeout={500}
+      classNames="modalAnimation"
+      addEndListener={() => {}}
+      in={visible}
+    >
+      <div className={rootClasses.join(" ")} onClick={() => setVisible(false)}>
+        <div
+          className={classes.modalContent}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {children}
+        </div>
       </div>
-    </div>
+    </CSSTransition>
   );
 };
 

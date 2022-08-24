@@ -12,8 +12,6 @@ export const fetchRecipes = () => {
             const addedRecipes = oldRecipesList.filter((item) => {
                 return !response.data.meals.find((responseItem: any) => responseItem.idMeal === item.idMeal);
             });
-            console.log('addedrecipes', addedRecipes);
-            console.log('datameals', response.data.meals)
             dispatch({type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: [...response.data.meals, ...addedRecipes]});
         } 
         catch(error) {

@@ -27,3 +27,6 @@
     text-decoration: underline;
 }
 
+.categoriesList a.activeCategory {
+    color: #699a71;
+}

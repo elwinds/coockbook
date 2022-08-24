@@ -18,7 +18,6 @@ class AuthApi {
         
         try{
             const response = await axios.post(endpoints.urlSignup, data);
-            console.log(response);
             return response;
         }
         catch(e){}
@@ -26,9 +25,6 @@ class AuthApi {
     static async login(data: PropsAuth){
         try {
             const response = await axios.post(endpoints.urlLogin, data);
-            console.log(response);
-
-
             return response;
         }
         catch(e) {

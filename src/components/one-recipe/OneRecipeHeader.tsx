@@ -1,6 +1,5 @@
 ﻿import * as React from "react";
 import { Link } from "react-router-dom";
-import { Recipe } from "../../store/reducers/recipeReducer/recipeTypes";
 import classes from "./OneRecipe.module.css";
 
 type Props = {
