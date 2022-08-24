@@ -16,6 +16,8 @@ export const recipeReducer = (state = initialState, action: RecipeAction): Recip
             return {recipes: action.payload, loading: false, error: null};
         case RecipeActionTypes.FETCH_RECIPES_ERROR:
             return {loading: false, error: action.payload, recipes: []};
+        case RecipeActionTypes.ADD_USER_RECIPE:
+            return {loading: false, error: null, recipes: [...state.recipes, action.payload]}
         default: return state
     }
 };

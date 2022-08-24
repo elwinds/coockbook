@@ -16,6 +16,7 @@ export enum RecipeActionTypes {
     FETCH_RECIPES = 'FETCH_RECIPES',
     FETCH_RECIPES_SUCCESS = 'FETCH_RECIPES_SUCCESS',
     FETCH_RECIPES_ERROR = 'FETCH_RECIPES_ERROR',
+    ADD_USER_RECIPE = 'ADD_USER_RECIPE',
 };
 
 interface FetchRecipesAction {
@@ -32,4 +33,9 @@ interface FetchRecipesErrorAction {
     payload: string;
 };
 
-export type RecipeAction = FetchRecipesAction | FetchRecipesSuccessAction | FetchRecipesErrorAction;
+interface AddUserRecipeAction {
+    type: RecipeActionTypes.ADD_USER_RECIPE;
+    payload: Recipe;
+}
+
+export type RecipeAction = FetchRecipesAction | FetchRecipesSuccessAction | FetchRecipesErrorAction | AddUserRecipeAction;

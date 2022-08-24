@@ -1,13 +1,20 @@
 ﻿import { Dispatch } from 'redux';
 import { RecipeAction, RecipeActionTypes } from '../reducers/recipeReducer/recipeTypes';
 import { RecipesApi } from '../../API/API';
+import { RootState } from '../reducers';
 
 export const fetchRecipes = () => {
-    return async (dispatch: Dispatch<RecipeAction>) => {
+    return async (dispatch: Dispatch<RecipeAction>, getState: () => RootState) => {
+        const oldRecipesList = getState().recipe.recipes;
         try {
             dispatch({type: RecipeActionTypes.FETCH_RECIPES});
             const response = await RecipesApi.fetchAllRecipes();
-            dispatch({type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data.meals});
+            const addedRecipes = oldRecipesList.filter((item) => {
+                return !response.data.meals.find((responseItem: any) => responseItem.idMeal === item.idMeal);
+            });
+            console.log('addedrecipes', addedRecipes);
+            console.log('datameals', response.data.meals)
+            dispatch({type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: [...response.data.meals, ...addedRecipes]});
         } 
         catch(error) {
             dispatch({type: RecipeActionTypes.FETCH_RECIPES_ERROR, payload: 'Ошибка при загрузке рецептов'});
