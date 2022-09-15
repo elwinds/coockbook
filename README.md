@@ -23,9 +23,12 @@ React, React-router, Redux, Redux thunk, Typescript, axios
 
 ## Используемые API
 
-Все карточки рецептов: https://www.themealdb.com/api/json/v1/1/search.php?s= \n
-Карточка одного рецепта: https://www.themealdb.com/api/json/v1/1/lookup.php?i= \n
-Категории рецептов: https://www.themealdb.com/api/json/v1/1/categories.php \n
+Все карточки рецептов: https://www.themealdb.com/api/json/v1/1/search.php?s=
+
+Карточка одного рецепта: https://www.themealdb.com/api/json/v1/1/lookup.php?i=
+
+Категории рецептов: https://www.themealdb.com/api/json/v1/1/categories.php 
+
 
 Авторизация реализована с помощью функционала firebase.
 
