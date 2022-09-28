@@ -1,0 +1,107 @@
+﻿@import '../../variables.scss';
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: $whiteColor;
+    font-family: 'Gilroy';
+    position: relative;
+
+    &__cross {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+
+    &__title {
+        color: $greenColor;
+        font-weight: 500;
+    }   
+}
+
+.btn {
+    margin-top: 40px;
+    background: $greenGradient;
+    border-radius: 10px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 17px;
+    color: $whiteColor;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.colsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+
+    &__label {
+        margin-top: 15px;
+    }
+
+    &__input {
+        border-radius: 10px;
+        border: $greyBorder;
+        background: $greyColor;
+        margin: 10px 0 0px 0;
+        font-size: 16px;
+        line-height: 19px;
+        color: $whiteColor;
+        padding: 10px 15px;
+        outline: none;
+
+        &:focus {
+            outline: $focusOutline;
+        }
+    }
+
+    &__select {
+        border-radius: 10px;
+        border: $greyBorder;
+        background: $greyColor;
+        margin: 10px 0 0px 0;
+        font-size: 16px;
+        line-height: 19px;
+        color: $whiteColor;
+        padding: 10px 15px;
+        outline: none;
+
+        &:focus {
+            outline: $focusOutline;
+        }
+    }
+
+    &__option {
+        background: $greyColor;
+        font-size: 16px;
+        line-height: 19px;
+        color: $whiteColor;
+    }
+
+    &__textarea {
+        border-radius: 10px;
+        border: $greyBorder;
+        background: $greyColor;
+        margin: 10px 0 0px 0;
+        font-size: 16px;
+        line-height: 19px;
+        color: $whiteColor;
+        padding: 10px 15px;
+        outline: none;
+        height: 65px;
+
+        &:focus {
+            outline: $focusOutline;
+        }
+    }
+}

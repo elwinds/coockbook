@@ -1,0 +1,86 @@
+﻿@import '../../variables.scss';
+
+.container {
+    margin: 20px auto;
+    width: 80%;
+    background: $greyGradient;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 15px 0;
+}
+
+.name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: $whiteColor;
+}
+
+.category {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: $whiteColor;
+
+    &__link {
+        text-decoration: none;
+        color: $whiteColor;
+    }
+}
+
+.img {
+    width: 100%;
+}
+
+.ingridients {
+    width: 80%;
+    padding: 20px 10px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: $whiteColor;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    &__item {
+        padding: 5px 15px;
+        border: 1px solid $whiteColor;
+        border-radius: 20px;
+        margin: 5px 10px;
+    }
+}
+
+.instruction {
+    width: 80%;
+    padding: 20px 0;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: $whiteColor;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    align-items: center;
+    width: 80%;
+}
+

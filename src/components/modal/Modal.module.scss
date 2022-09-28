@@ -1,0 +1,32 @@
+﻿@import '../../variables.scss';
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+
+    &--active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.modalContent {
+    padding: 25px;
+    background-color: $bcgGreyColor;
+    border-radius: 10px;
+    min-width: 250px;
+    color: $whiteColor;
+    font-family: 'Gilroy';
+}

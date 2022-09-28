@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../../App";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import { UserActionTypes } from "../../../store/reducers/userReducer/userTypes";
-import classes from "./Favorite.module.css";
+import classes from "./Favorite.module.scss";
 
 type Props = {
   idMeal: string;

@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import Favorite from "../UI/Favorite/Favorite";
-import classes from "./RecipeCard.module.css";
+import classes from "./RecipeCard.module.scss";
 
 type Props = {
   recipeId: string;
@@ -16,7 +16,7 @@ const RecipeCardFooter: React.FC<Props> = (props) => {
   };
 
   return (
-    <div className={classes.recipeCardFooter}>
+    <div className={classes.footer}>
       <Button
         buttonText="View full recipe"
         onClickHandler={() => {

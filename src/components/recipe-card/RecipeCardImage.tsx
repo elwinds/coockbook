@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import classes from "./RecipeCard.module.css";
+import classes from "./RecipeCard.module.scss";
 
 type Props = {
   recipeImage: string;
@@ -12,7 +12,7 @@ const RecipeCardImage: React.FC<Props> = (props) => {
   return (
     <div>
       <img
-        className={classes.recipeCardImage}
+        className={classes.img}
         src={recipeImage}
         alt={recipeName}
       />

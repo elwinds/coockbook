@@ -1,6 +1,6 @@
 ﻿import * as React from "react";
 import { Link } from "react-router-dom";
-import classes from "./OneRecipe.module.css";
+import classes from "./OneRecipe.module.scss";
 
 type Props = {
   recipeName: string;
@@ -10,10 +10,10 @@ type Props = {
 const OneRecipeHeader: React.FC<Props> = (props) => {
   const { recipeName, recipeCategory } = props;
   return (
-    <div className={classes.oneRecipeHeader}>
-      <div className={classes.oneRecipeHeaderName}>{recipeName}</div>
-      <div className={classes.oneRecipeHeaderCategory}>
-        <Link to={"/category/" + recipeCategory}>{recipeCategory}</Link>
+    <div className={classes.header}>
+      <div className={classes.name}>{recipeName}</div>
+      <div className={classes.category}>
+        <Link className={classes.category__link} to={"/category/" + recipeCategory}>{recipeCategory}</Link>
       </div>
     </div>
   );

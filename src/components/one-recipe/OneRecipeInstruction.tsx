@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import classes from "./OneRecipe.module.css";
+import classes from "./OneRecipe.module.scss";
 
 type Props = {
     recipeInstructions: string,
@@ -7,7 +7,7 @@ type Props = {
 
 const OneRecipeInstruction: React.FC<Props> = (props) => {
     return (
-        <div className={classes.oneRecipeInstruction}>
+        <div className={classes.instruction}>
             {props.recipeInstructions}
         </div>
     )

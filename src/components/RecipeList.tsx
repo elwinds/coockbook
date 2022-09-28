@@ -1,7 +1,7 @@
 ﻿import * as React from "react";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import RecipeCard from "./recipe-card/RecipeCard";
-import classes from "./recipe-card/RecipeCard.module.css";
+import classes from "./recipe-card/RecipeCard.module.scss";
 import Pagination from "./pagination/Pagination";
 
 const RecipeList: React.FC = () => {

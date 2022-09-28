@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import classes from "./Auth.module.css";
+import classes from "./Auth.module.scss";
 import { AuthApi } from "../../API/AuthAPI";
 import { regExpEmail } from "./regExpEmail";
 import { PropsAuth } from "../../API/AuthAPI";
@@ -59,9 +59,12 @@ const SignUpForm = () => {
 
   return (
     <form className={classes.form}>
-      <div className={classes.form_inputs}>
-        <label htmlFor="email">E-mail</label>
+      <div className={classes.form__container}>
+        <label className={classes.form__label} htmlFor="email">
+          E-mail
+        </label>
         <input
+          className={classes.form__input}
           value={emailValue}
           onChange={(e) => setEmailValue(e.target.value)}
           type="email"
@@ -69,10 +72,15 @@ const SignUpForm = () => {
           placeholder="Enter your email"
         ></input>
         {!isEmailValid && (
-          <p className={classes.invalidInput}>Please enter correct email</p>
+          <p className={classes.form__invalidMessage}>
+            Please enter correct email
+          </p>
         )}
-        <label htmlFor="password">Create password</label>
+        <label className={classes.form__label} htmlFor="password">
+          Create password
+        </label>
         <input
+          className={classes.form__input}
           value={passwordValue}
           onChange={(e) => setPasswordValue(e.target.value)}
           type="password"
@@ -80,10 +88,13 @@ const SignUpForm = () => {
           placeholder="Enter password"
         ></input>
         {!isPasswordValid && (
-          <p className={classes.invalidInput}>Minimum 8 symbols</p>
+          <p className={classes.form__invalidMessage}>Minimum 8 symbols</p>
         )}
-        <label htmlFor="repeatPassword">Repeat password</label>
+        <label className={classes.form__label} htmlFor="repeatPassword">
+          Repeat password
+        </label>
         <input
+          className={classes.form__input}
           value={repeatPasswordValue}
           onChange={(e) => setRepeatPasswordValue(e.target.value)}
           type="password"
@@ -91,9 +102,10 @@ const SignUpForm = () => {
           placeholder="Repeat password"
         ></input>
         {!isPasswordMatch && (
-          <p className={classes.invalidInput}>Passwords don't match</p>
+          <p className={classes.form__invalidMessage}>Passwords don't match</p>
         )}
         <button
+          className={classes.btnForm}
           disabled={isButtonDisabled}
           onClick={(e) => buttonClickHandler(e)}
           type="submit"

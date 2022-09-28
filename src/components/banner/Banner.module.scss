@@ -1,0 +1,38 @@
+﻿@import '../../variables.scss';
+
+.container {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+
+    &:after {
+        display: block;
+        content: '';
+        padding-bottom: 56.25%;
+    }
+
+    &__bcg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &__text {
+        color: $whiteColor;
+        position: absolute;
+        z-index: 2;
+        font-size: 20px;
+        width: 40%;
+        display: flex;
+        padding-left: 30px;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-weight: 400;
+    }
+}

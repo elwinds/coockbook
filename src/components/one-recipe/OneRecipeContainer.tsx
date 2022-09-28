@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { Recipe } from '../../store/reducers/recipeReducer/recipeTypes';
 import OneRecipeHeader from './OneRecipeHeader';
-import classes from "./OneRecipe.module.css";
+import classes from "./OneRecipe.module.scss";
 import OneRecipeImage from './OneRecipeImage';
 import OneRecipeInstruction from './OneRecipeInstruction';
 import OneRecipeFooter from './OneRecipeFooter';
@@ -32,7 +32,7 @@ const OneRecipeContainer: React.FC<Props> = (props) => {
  
 
     return (
-      <div className={classes.oneRecipeContainer}>
+      <div className={classes.container}>
         <OneRecipeHeader recipeName={strMeal} recipeCategory={strCategory} />
         <OneRecipeImage recipeImage={strMealThumb} recipeName={strMeal} />
         <OneRecipeIngridients ingridients={recipeIngridientsWithMeasure} />

@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import classes from "./Pagination.module.css";
+import classes from "./Pagination.module.scss";
 
 type Props = {
   activePage: number;
@@ -18,10 +18,10 @@ const Pagination: React.FC<Props> = (props) => {
 
 
   return (
-    <div className={classes.pagination_container}>
+    <div className={classes.container}>
       {pageNumber.map((item) => {
         return (
-          <button key={item} className={item === activePage ? classes.activeButton : ""} onClick={() => changePage(item)}>
+          <button key={item} className={item === activePage ? [classes.btn, classes['btn--active']].join(' ') : classes.btn} onClick={() => changePage(item)}>
             {item}
           </button>
         );

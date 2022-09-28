@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../UI/Button/Button';
-import classes from "./OneRecipe.module.css";
+import classes from "./OneRecipe.module.scss";
 
 
 const OneRecipeFooter: React.FC = () => {
@@ -12,7 +12,7 @@ const OneRecipeFooter: React.FC = () => {
     }
 
     return (
-      <div className={classes.oneRecipeFooter}>
+      <div className={classes.footer}>
         <Button
           buttonText="Back to all recipes"
           onClickHandler={() => {

@@ -1,7 +1,7 @@
 ﻿import * as React from "react";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import RecipeCard from "../recipe-card/RecipeCard";
-import classes from "./Favorites.module.css";
+import classes from "./Favorites.module.scss";
 
 
 const Favorites = () => {
@@ -16,9 +16,9 @@ const Favorites = () => {
 
   return (
     <div className={classes.favoriteRecipes}>
-      <h3>FAVORITE RECIPES</h3>
+      <h3 className={classes.favoriteRecipes__title}>FAVORITE RECIPES</h3>
         {idFavoriteRecipes.length !== 0  ? (
-          <div className={classes.favoritesContainer}>
+          <div className={classes.container}>
             {filteredRecipes.map((recipe) => {
               return <RecipeCard key={recipe.idMeal} recipe={recipe} />;
             })}

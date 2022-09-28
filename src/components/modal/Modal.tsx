@@ -1,6 +1,6 @@
 ﻿import * as React from "react";
-import classes from "./Modal.module.css";
-import "./animation.css";
+import classes from "./Modal.module.scss";
+import "./animation.scss";
 import { Dispatch, SetStateAction } from "react";
 import { CSSTransition } from "react-transition-group";
 
@@ -13,7 +13,7 @@ type Props = {
 const Modal: React.FC<Props> = ({ children, visible, setVisible }) => {
   const rootClasses = [classes.modal];
   if (visible) {
-    rootClasses.push(classes.modal_active);
+    rootClasses.push(classes['modal--active']);
   }
 
   return (

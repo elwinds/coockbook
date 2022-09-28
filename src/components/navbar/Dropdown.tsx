@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import classes from "./Navbar.module.css";
+import classes from "./Navbar.module.scss";
 import type { Recipe } from "../../store/reducers/recipeReducer/recipeTypes";
 import { Link } from "react-router-dom";
 
@@ -14,8 +14,8 @@ const Dropdown: React.FC<Props> = (props) => {
   const renderRecipes = () => {
     return recipes.map((recipe) => {
       return (
-        <li key={recipe.idMeal}>
-          <Link
+        <li className={classes.listDropdown__li} key={recipe.idMeal}>
+          <Link className={classes.container__link}
             onClick={() => {
               searchQuery("");
             }}

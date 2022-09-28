@@ -2,7 +2,7 @@
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import useOnClickOutside from "../../hooks/useClickOutside";
 import Dropdown from "./Dropdown";
-import classes from "./Navbar.module.css";
+import classes from "./Navbar.module.scss";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = React.useState<string>("");
@@ -26,7 +26,7 @@ const Search = () => {
         value={searchQuery}
         placeholder="Search"
         onChange={(e) => setSearchQuery(e.target.value)}
-        className={classes.searchInput}
+        className={classes.searchContainer__input}
       />
       {searchQuery && (
         <Dropdown recipes={filteredRecipes} searchQuery={setSearchQuery} />

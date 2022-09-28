@@ -2,7 +2,7 @@
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { RecipeActionTypes } from "../../store/reducers/recipeReducer/recipeTypes";
-import classes from "./AddRecipeForm.module.css";
+import classes from "./AddRecipeForm.module.scss";
 
 type Props = {
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -62,22 +62,28 @@ const AddRecipeForm: React.FC<Props> = (props) => {
   return (
     <>
       <form className={classes.form}>
-        <div onClick={crossHandler} className={classes.cross}>
+        <div onClick={crossHandler} className={classes.form__cross}>
           &#10006;
         </div>
-        <h3>ADDING RECIPE</h3>
-        <div className={classes.column_container}>
-          <div className={classes.form_column}>
-            <label htmlFor="title">Title of dish</label>
+        <h3 className={classes.form__title}>ADDING RECIPE</h3>
+        <div className={classes.colsContainer}>
+          <div className={classes.column}>
+            <label className={classes.column__label} htmlFor="title">
+              Title of dish
+            </label>
             <input
+              className={classes.column__input}
               value={dishTitleValue}
               onChange={(e) => setDishTitleValue(e.target.value)}
               type="text"
               id="title"
               placeholder="Enter title of your recipe"
             ></input>
-            <label htmlFor="category">Choose category of recipe</label>
+            <label className={classes.column__label} htmlFor="category">
+              Choose category of recipe
+            </label>
             <select
+              className={classes.column__select}
               id="category"
               size={1}
               value={categoryValue}
@@ -85,12 +91,17 @@ const AddRecipeForm: React.FC<Props> = (props) => {
             >
               {categories.map((item) => {
                 return (
-                  <option key={item.idCategory}>{item.strCategory}</option>
+                  <option className={classes.column__option} key={item.idCategory}>
+                    {item.strCategory}
+                  </option>
                 );
               })}
             </select>
-            <label htmlFor="image">Image</label>
+            <label className={classes.column__label} htmlFor="image">
+              Image
+            </label>
             <input
+              className={classes.column__input}
               value={linkImageValue}
               id="image"
               type="text"
@@ -98,16 +109,22 @@ const AddRecipeForm: React.FC<Props> = (props) => {
               onChange={(e) => setLinkImageValue(e.target.value)}
             ></input>
           </div>
-          <div className={classes.form_column}>
-            <label htmlFor="ing-measure">Enter ingredients and measure</label>
+          <div className={classes.column}>
+            <label className={classes.column__label} htmlFor="ing-measure">
+              Enter ingredients and measure
+            </label>
             <textarea
+              className={classes.column__textarea}
               value={ingrAndMeasureValue}
               id="ing-measure"
               placeholder="Ingredient1: measure, Ingredient2: measure..."
               onChange={(e) => setIngrAndMeasureValue(e.target.value)}
             ></textarea>
-            <label htmlFor="instructions">Instructions</label>
+            <label className={classes.column__label} htmlFor="instructions">
+              Instructions
+            </label>
             <textarea
+              className={classes.column__textarea}
               value={instructionsValue}
               id="instructions"
               placeholder="Enter cooking instructions"
@@ -115,7 +132,11 @@ const AddRecipeForm: React.FC<Props> = (props) => {
             ></textarea>
           </div>
         </div>
-        <button onClick={(e) => addRecipeButtonHandler(e)} type="submit">
+        <button
+          className={classes.btn}
+          onClick={(e) => addRecipeButtonHandler(e)}
+          type="submit"
+        >
           Add recipe
         </button>
       </form>

@@ -7,7 +7,7 @@ import { UserActionTypes } from "../../store/reducers/userReducer/userTypes";
 import Modal from "../modal/Modal";
 import Favorites from "../favorites/Favorites";
 import Button from "../UI/Button/Button";
-import classes from "./Profile.module.css";
+import classes from "./Profile.module.scss";
 import AddRecipeForm from "../add-recipe-form/AddRecipeForm";
 
 const Profile = () => {
@@ -33,17 +33,17 @@ const Profile = () => {
   };
 
   return (
-    <div className={classes.profilePage}>
-      <h1>USER INFO</h1>
-      <hr />
-      <div className={classes.userInfo}>User: {email}</div>
+    <div className={classes.container}>
+      <h1 className={classes.container__title}>USER INFO</h1>
+      <hr className={classes.container__hr} />
+      <div className={classes.container__info}>User: {email}</div>
       <Button
         buttonText={"Logout"}
         onClickHandler={onClickLogoutButton}
       ></Button>
-      <hr />
+      <hr className={classes.container__hr} />
       <Favorites />
-      <hr />
+      <hr className={classes.container__hr} />
       <Button
         buttonText={"Add new recipe"}
         onClickHandler={onClickAddRecipeButton}

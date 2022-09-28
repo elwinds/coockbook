@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import RecipeCard from "../components/recipe-card/RecipeCard";
-import classes from "../components/recipe-card/RecipeCard.module.css";
+import classes from "../components/recipe-card/RecipeCard.module.scss";
 
 const CategoryPage = () => {
   const params = useParams();

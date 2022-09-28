@@ -3,7 +3,7 @@ import { Recipe } from "../../store/reducers/recipeReducer/recipeTypes";
 import RecipeCardHeader from "./RecipeCardHeader";
 import RecipeCardImage from "./RecipeCardImage";
 import RecipeCardIngridients from "./RecipeCardIngridients";
-import classes from "./RecipeCard.module.css";
+import classes from "./RecipeCard.module.scss";
 import RecipeCardFooter from "./RecipeCardFooter";
 import { useIngridients } from "../../hooks/useIngridients";
 
@@ -21,7 +21,7 @@ export const RecipeCard: React.FC<Props> = (props) => {
   );
 
   return (
-    <div className={classes.recipeCard}>
+    <div className={classes.card}>
       <RecipeCardHeader
         recipeName={recipe.strMeal}
         recipeCategory={recipe.strCategory}

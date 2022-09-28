@@ -1,6 +1,5 @@
 ﻿import * as React from "react";
-import classes from "./RecipeCard.module.css";
-
+import classes from "./RecipeCard.module.scss";
 
 type Props = {
   ingridients: string[];
@@ -10,10 +9,10 @@ const RecipeCardIngridients: React.FC<Props> = (props) => {
   const { ingridients } = props;
 
   return (
-    <div className={classes.recipeCardIngridients}>
+    <div className={classes.ingridients}>
       {ingridients.map((ingrItem, index) => (
         <div
-          className={classes.recipeCardOneIngridient}
+          className={classes.ingridients__item}
           key={ingrItem + Date.now() + index}
         >
           {ingrItem}

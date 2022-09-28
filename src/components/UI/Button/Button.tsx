@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import classes from "./Button.module.css";
+import classes from "./Button.module.scss";
 
 type Props = {
   buttonText: string;
@@ -9,7 +9,7 @@ type Props = {
 const Button: React.FC<Props> = (props) => {
   const { buttonText, onClickHandler } = props;
   return (
-    <button className={classes.button} onClick={onClickHandler}>
+    <button className={classes.btn} onClick={onClickHandler}>
       {buttonText}
     </button>
   );

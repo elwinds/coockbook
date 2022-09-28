@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import classes from './RecipeCard.module.css';
+import classes from './RecipeCard.module.scss';
 import { Link } from "react-router-dom";
 
 
@@ -10,10 +10,13 @@ type Props = {
 
 const RecipeCardHeader: React.FC<Props> = (props) => {
     return (
-      <div className={classes.recipeCardHeader}>
-        <div className={classes.recipeCardHeaderName}>{props.recipeName}</div>
-        <div className={classes.recipeCardHeaderCategory}>
-          <Link to={"/category/" + props.recipeCategory}>
+      <div className={classes.header}>
+        <div className={classes.name}>{props.recipeName}</div>
+        <div className={classes.category}>
+          <Link
+            className={classes.category__link}
+            to={"/category/" + props.recipeCategory}
+          >
             {props.recipeCategory}
           </Link>
         </div>

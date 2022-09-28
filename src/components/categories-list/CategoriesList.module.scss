@@ -1,0 +1,33 @@
+﻿@import '../../variables.scss';
+
+.categoriesList {
+    display: flex;
+    background: $greyColor;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    color: $whiteColor;
+    padding: 20px 10px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+
+    &__link {
+        color: $whiteColor;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &--active {
+            color: $greenColor;
+        }
+    }
+}
+
+.oneCategoryItem {
+    padding: 5px 45px;
+}

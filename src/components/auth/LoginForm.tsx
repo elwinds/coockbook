@@ -1,12 +1,12 @@
 ﻿import * as React from "react";
 import { AuthApi } from "../../API/AuthAPI";
-import classes from "./Auth.module.css";
+import classes from "./Auth.module.scss";
 import { regExpEmail } from "./regExpEmail";
 import { PropsAuth } from "../../API/AuthAPI";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../App";
 import { useDispatch } from "react-redux";
-import {UserActionTypes} from '../../store/reducers/userReducer/userTypes'
+import { UserActionTypes } from "../../store/reducers/userReducer/userTypes";
 
 const LoginForm = () => {
   const { setIsAuth } = React.useContext(AppContext);
@@ -36,23 +36,27 @@ const LoginForm = () => {
     if (response) {
       localStorage.setItem("idToken", response.data.idToken);
       localStorage.setItem("userEmail", response.data.email);
-      dispatch({ type: UserActionTypes.SET_USER_EMAIL, payload: response.data.email });
-
+      dispatch({
+        type: UserActionTypes.SET_USER_EMAIL,
+        payload: response.data.email,
+      });
 
       if (setIsAuth) {
         setIsAuth(true);
       }
     }
-    
 
     navigate("/profile", { replace: true });
   };
 
   return (
     <form className={classes.form}>
-      <div className={classes.form_inputs}>
-        <label htmlFor="login">Login</label>
+      <div className={classes.form__container}>
+        <label className={classes.form__label} htmlFor="login">
+          Login
+        </label>
         <input
+          className={classes.form__input}
           value={emailValue}
           onChange={(e) => setEmailValue(e.target.value)}
           type="login"
@@ -60,10 +64,15 @@ const LoginForm = () => {
           placeholder="Enter your email"
         ></input>
         {!isEmailValid && (
-          <p className={classes.invalidInput}>Please enter correct email</p>
+          <p className={classes.form__invalidMessage}>
+            Please enter correct email
+          </p>
         )}
-        <label htmlFor="password">Password</label>
+        <label className={classes.form__label} htmlFor="password">
+          Password
+        </label>
         <input
+          className={classes.form__input}
           value={passwordValue}
           onChange={(e) => setPasswordValue(e.target.value)}
           type="password"
@@ -71,6 +80,7 @@ const LoginForm = () => {
           placeholder="Enter your password"
         ></input>
         <button
+          className={classes.btnForm}
           disabled={isButtonDisabled}
           onClick={(e) => buttonClickHandler(e)}
           type="submit"
