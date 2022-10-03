@@ -1,13 +1,13 @@
 ﻿@import '../../variables.scss';
 
 .container {
-    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     color: $whiteColor;
     font-family: 'Gilroy';
     font-size: 15px;
+    margin-bottom: 30px;
 
     &__tabs {
         display: flex;
@@ -106,5 +106,35 @@
 
     &:disabled {
         background: $darkGreyColor;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container__tabs {
+        width: 50%;
+    }
+
+    .form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 550px) {
+    .container__tabs {
+        width: 60%;
+    }
+
+    .form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 375px) {
+    .container__tabs {
+        width: 70%;
+    }
+
+    .form {
+        width: 70%;
     }
 }

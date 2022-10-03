@@ -1,0 +1,70 @@
+﻿@import '../../variables.scss';
+
+.container {
+    background: $greyColor;
+}
+
+.burger {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__text {
+        padding: 0 25px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 21px;
+        color: $whiteColor;
+    }
+}
+
+.list {
+    display: none;
+    padding: 10px 30px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    color: $whiteColor;
+
+
+    &--open{
+    display: flex;
+    flex-direction: column;
+    }
+
+    &__link {
+        color: $whiteColor;
+        text-decoration: none;
+        padding: 10px 0;
+    
+         &:hover {
+            text-decoration: underline;
+        }
+    
+        &--active {
+            color: $greenColor;
+        }
+    }
+}
+
+.oneCategoryItem {
+    padding: 10px 0;
+}
+
+
+
+@media (min-width: 425px) {
+    .container {
+        display: none;
+    }
+}

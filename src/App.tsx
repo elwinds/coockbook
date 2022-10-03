@@ -21,6 +21,7 @@ import { useActions } from "./hooks/useActions";
 import { UserActionTypes } from "./store/reducers/userReducer/userTypes";
 import { useTypedSelector } from "./hooks/useTypedSelector";
 import { Loader } from "./components/UI/Loader/Loader";
+import Burger from "./components/burger/Burger";
 interface AppContext {
   isAuth: boolean;
   setIsAuth?: Dispatch<SetStateAction<boolean>>;
@@ -73,6 +74,7 @@ function App() {
       <Navbar />
       <Banner />
       <CategoriesList />
+      <Burger/>
       <Routes>
         <Route path="/" element={<MainPage />} />
 

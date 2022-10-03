@@ -25,7 +25,10 @@ const CategoriesList = () => {
       </Link>
       {categories.map((item) => {
         return (
-          <div key={item.idCategory} className={classes.oneCategoryItem}>
+          <div
+            key={item.idCategory}
+            className={classes.oneCategoryItem}
+          >
             <Link
               to={"/category/" + item.strCategory}
               className={

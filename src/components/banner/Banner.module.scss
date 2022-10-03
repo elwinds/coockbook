@@ -36,3 +36,15 @@
         font-weight: 400;
     }
 }
+
+@media (max-width: 740px) {
+    .container__text {
+        width: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .container__text {
+            font-size: 16px;
+        }
+}

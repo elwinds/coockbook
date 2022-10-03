@@ -31,3 +31,9 @@
 .oneCategoryItem {
     padding: 5px 45px;
 }
+
+@media (max-width: 425px) {
+    .categoriesList {
+        display: none;
+    }
+}
